@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng dẫn cài đặt Harasocial Tool trên iPad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --accent: #10b981;
+            --border: #334155;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+            --border-radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo-area {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 20px;
+            margin-bottom: 16px;
+            font-weight: 700;
+            font-size: 28px;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 20px rgba(59, 130, 246, 0.4); }
+            50% { transform: scale(1.03); box-shadow: 0 0 30px rgba(16, 185, 129, 0.6); }
+            100% { transform: scale(1); box-shadow: 0 0 20px rgba(59, 130, 246, 0.4); }
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(to right, #3b82f6, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        .alert-box {
+            background-color: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 30px;
+            font-size: 15px;
+        }
+
+        .alert-box strong {
+            color: #60a5fa;
+        }
+
+        .download-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+        }
+
+        .download-card h2 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .download-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+            color: white;
+            padding: 12px 28px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 30px;
+            box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2);
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(59, 130, 246, 0.3);
+            background: linear-gradient(135deg, #4f46e5, var(--primary-hover));
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn svg {
+            margin-right: 8px;
+            width: 20px;
+            height: 20px;
+        }
+
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .step-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .step-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .step-title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .step-body {
+            padding: 24px;
+        }
+
+        .step-desc {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .step-desc ul {
+            margin-top: 8px;
+            margin-left: 20px;
+        }
+
+        .step-desc li {
+            margin-bottom: 6px;
+        }
+
+        .img-container {
+            width: 100%;
+            background-color: #0f172a;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            position: relative;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-area">UM</div>
+            <h1>Cài Đặt Harasocial Tool</h1>
+            <p class="subtitle">Tài liệu hướng dẫn thiết lập tiện ích trên thiết bị iPad</p>
+        </header>
+
+        <div class="alert-box">
+            👉 <strong>Lưu ý:</strong> Do hạn chế kỹ thuật của Apple, trình duyệt <strong>Google Chrome trên iPad</strong> không hỗ trợ cài đặt các extension mở rộng trực tiếp. Chúng ta sẽ sử dụng trình duyệt <strong>Orion Browser</strong> để thay thế (đây là trình duyệt tối ưu hỗ trợ đầy đủ API Chrome Extension trên iOS).
+        </div>
+
+        <div class="download-card">
+            <h2>Tải file cài đặt về máy</h2>
+            <p>Nhấp vào nút dưới đây để tải về tệp tin ZIP của tiện ích và chia sẻ lên iPad của bạn.</p>
+            <a href="USER_TOOL.zip" class="btn" download="USER_TOOL.zip">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                </svg>
+                Tải file USER_TOOL.zip
+            </a>
+        </div>
+
+        <div class="steps-container">
+            <!-- Step 1 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Chuyển file ZIP sang iPad và lưu trữ</div>
+                </div>
+                <div class="step-body">
+                    <div class="step-desc">
+                        Gửi file <strong>USER_TOOL.zip</strong> vừa tải sang iPad của bạn (qua AirDrop, Drive, Zalo, Messenger, Mail...) sau đó thực hiện lưu tệp:
+                        <ul>
+                            <li>Mở ứng dụng <strong>Tệp (Files)</strong> trên iPad.</li>
+                            <li>Lưu tệp zip này tại thư mục <strong>Trên iPad (On My iPad)</strong>. Việc lưu trực tiếp trên thiết bị giúp Orion dễ dàng đọc tệp mà không gặp lỗi phân quyền của iCloud.</li>
+                        </ul>
+                    </div>
+                    <div class="img-container">
+                        <img src="https://sf-static.upanhlaylink.com/img/image_20260729cef0bc1b9e1bf77c55c006c382ed7941.jpg" alt="Thư mục Tệp trên iPad">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Cài đặt Orion Browser & Bật chế độ Extension</div>
+                </div>
+                <div class="step-body">
+                    <div class="step-desc">
+                        <ul>
+                            <li>Tải trình duyệt <strong>Orion Browser</strong> từ App Store.</li>
+                            <li>Mở Orion, chạm vào <strong>biểu tượng ba chấm (•••)</strong> -> Chọn <strong>Settings (Cài đặt)</strong>.</li>
+                            <li>Cuộn xuống dưới và kích hoạt mục <strong>Chrome or Firefox Extensions</strong> nếu chưa được bật.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Import tiện ích mở rộng vào Orion</div>
+                </div>
+                <div class="step-body">
+                    <div class="step-desc">
+                        <ul>
+                            <li>Trở lại trình duyệt Orion, bấm vào <strong>Menu ba chấm (•••)</strong> -> Chọn <strong>Extensions</strong>.</li>
+                            <li>Bấm nút <strong>Dấu cộng (+)</strong> ở thanh công cụ và chọn <strong>Install from API/File</strong>.</li>
+                            <li>Tìm và chọn tệp <strong>USER_TOOL.zip</strong> đã lưu ở Bước 1.</li>
+                        </ul>
+                    </div>
+                    <div class="img-container">
+                        <img src="https://sf-static.upanhlaylink.com/img/image_20260729d68905ab9dce40860ebfaf00350d8fb3.jpg" alt="Import extension vào Orion">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Truy cập Harasocial để sử dụng</div>
+                </div>
+                <div class="step-body">
+                    <div class="step-desc">
+                        Truy cập trang Harasocial trên Orion và đăng nhập:
+                        <ul>
+                            <li>Bạn sẽ nhìn thấy thanh công cụ nổi tích hợp đầy đủ các tính năng kiểm tra phí ship, khuyến mãi, bảo trì tương tự như phiên bản máy tính.</li>
+                            <li>Nếu gặp lỗi không hiển thị hoặc phản hồi chậm, hãy thử tải lại trang hoặc tắt/bật lại extension trong menu Orion.</li>
+                        </ul>
+                    </div>
+                    <div class="img-container">
+                        <img src="https://sf-static.upanhlaylink.com/img/image_202607295cf31bcc1b351ad2cf14f6cddcc185de.jpg" alt="Tiện ích chạy thực tế trên Harasocial">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Hệ thống công cụ quản trị Harasocial Suite v2.7.1 - UmBomilk</p>
+        </footer>
+    </div>
+</body>
+</html>
